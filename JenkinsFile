@@ -1,0 +1,33 @@
+pipeline {
+   agent any
+
+   stages {
+       stage('Initialize') {
+           steps {
+               echo 'Initializing...'
+           }
+       }
+       stage('Tests') {
+           parallel {
+               stage('Test #1') {
+                   agent {
+                       label 'Z_PDC_USD7VHJMR2'
+                   }
+                   steps {
+                       echo 'Current time (agent 1): %date% %time%'
+                       echo 'Test #1 on agent Z_PDC_USD7VHJMR2'
+                   }
+               }
+               stage('Test #2') {
+                   agent {
+                       label 'QROPD023'
+                   }
+                   steps {
+                       echo 'Current time (agent 2): %date% %time%'
+                       echo 'Test #2 on agent QROPD023'
+                   }
+               }
+           }
+       }
+   }
+}
