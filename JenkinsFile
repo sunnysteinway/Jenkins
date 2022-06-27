@@ -13,7 +13,7 @@ pipeline {
                    agent any
                    steps {
                        echo 'Current time (agent 1): %date% %time%'
-                       echo 'Test #1 on agent Z_PDC_USD7VHJMR2'
+                       echo 'Test #1'
                    }
                }
                stage('Test #2') {
