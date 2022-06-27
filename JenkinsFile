@@ -25,6 +25,14 @@ pipeline {
                        echo 'Test #2 on agent QROPD023'
                    }
                }
+               stage('Test #3') {
+                   agent any
+                   steps {
+                       echo 'Current time (agent 3): %date% %time%'
+                       echo 'Test #3'
+                       python script.py
+                   }
+               }
            }
        }
    }
