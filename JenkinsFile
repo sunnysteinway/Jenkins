@@ -29,7 +29,7 @@ pipeline {
                    agent any
                    steps {
                        echo 'Current time (agent 3): %date% %time%'
-                       echo 'python --version'
+                       python --version
                    }
                }
            }
