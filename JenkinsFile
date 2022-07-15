@@ -1,6 +1,8 @@
 pipeline {
 
-   agent any
+   agent {
+        label 'Z_PDC_USD7VHJMR2'
+    }
 
    stages {
        stage('Initialize') {
